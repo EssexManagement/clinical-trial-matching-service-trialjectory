@@ -306,14 +306,12 @@ export class APIQuery {
     if (allowable == undefined) return isArray ? [] : null;
 
     if (isArray) {
-      (<string[]>value).filter(item => (<string[]>allowable).includes(item))
+      return (<string[]>value).filter(item => (<string[]>allowable).includes(item))
     } else {
       if (param == "stage" ) return (<number[]>allowable).includes(<number>value) ? value : null;
 
       return (<string[]>allowable).includes(<string>value) ? value : null;
     }
-
-    return null;
   }
 
   /**
