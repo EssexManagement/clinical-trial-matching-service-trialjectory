@@ -210,11 +210,53 @@ describe('TrialjectoryMappingLogic', () => {
             effectiveDateTime: '2023-05-04T19:41:59.078Z',
           },
         },
+        {
+          resource: {
+            resourceType: "Observation",
+            meta: {
+              profile: [
+                "http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-tnm-clinical-stage-group",
+              ],
+            },
+            status: "final",
+            code: {
+              coding: [
+                {
+                  system: "http://loinc.org",
+                  code: "21908-9",
+                },
+              ],
+            },
+            subject: {
+              reference: "urn:uuid:fglscNH3Ke3tYmWe-UQEu",
+              type: "Patient",
+            },
+            valueCodeableConcept: {
+              coding: [
+                {
+                  system: "http://cancerstaging.org",
+                  code: "4",
+                  display: "IV",
+                },
+              ],
+            },
+            method: {
+              coding: [
+                {
+                  system: "http://ncimeta.nci.nih.gov",
+                  code: "C146985",
+                  display: "AJCC Cancer Staging Manual 8th Edition",
+                },
+              ],
+            },
+          },
+        }
       ],
     });
     expect(instance.getPrimaryCancerValues()).toEqual('breast_cancer');
-    expect(instance.getSecondaryCancerValues()).toBeNull();
+    expect(instance.getSecondaryCancerValues()).toEqual('metastatic');
     expect(instance.getECOGScore()).toEqual(0);
     expect(instance.getKarnofskyScore()).toEqual(100);
+    expect(instance.getStageValues()).toEqual('4');
   });
 });

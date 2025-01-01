@@ -17,7 +17,8 @@
     "serve": "node start.js",
     "start": "npm run-script build:ts && npm run-script serve",
     "test": "npm run-script build:tests && npm run-script test:run",
-    "test:run": "jasmine"
+    "test:run": "jasmine",
+    "test:watch": "nodemon --exec 'npm run build:tests' --ext *.spec.ts"
   },
   "author": "",
   "license": "Apache-2.0",
