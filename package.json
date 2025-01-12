@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mcode/clinical-trial-matching-service-trialjectory.git"
+    "url": "https://github.com/EssexManagement/clinical-trial-matching-service-trialjectory.git"
   },
   "scripts": {
     "build": "npm run-script build:ts",
