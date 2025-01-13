@@ -303,14 +303,12 @@ export class APIQuery {
     if (allowable == undefined) return isArray ? [] : null;
 
     if (isArray) {
-      (<string[]>value).filter(item => (<string[]>allowable).includes(item))
+      return (<string[]>value).filter(item => (<string[]>allowable).includes(item))
     } else {
       if (param == "stage" ) return (<number[]>allowable).includes(<number>value) ? value : null;
 
       return (<string[]>allowable).includes(<string>value) ? value : null;
     }
-
-    return null;
   }
 
   /**
@@ -461,6 +459,7 @@ function sendQuery(
               reject(new Error("Unable to parse response from server"));
             }
           } else {
+            console.error(responseBody)
             reject(
               new APIError(
                 `Server returned ${result.statusCode} ${result.statusMessage}`,
@@ -473,7 +472,10 @@ function sendQuery(
       }
     );
 
-    request.on("error", (error) => reject(error));
+    request.on("error", (error) => {
+      console.error(error)
+      reject(error)
+    });
 
     request.write(body);
     request.end();
