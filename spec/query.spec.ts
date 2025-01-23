@@ -186,8 +186,7 @@ describe("APIQuery", () => {
   });
 
   it("converts the query to a string", () => {
-    expect(
-      new APIQuery({
+    const query = new APIQuery({
         resourceType: "Bundle",
         type: "collection",
         entry: [
@@ -214,10 +213,72 @@ describe("APIQuery", () => {
               ],
             },
           },
-        ],
-      }).toString()
-    ).toEqual(
-      '{"lat":"42.499332","lng":"-71.281901","distance":null,"biomarkers":null,"stage":null,"cancerName":null,"cancerType":null,"cancerSubType":null,"ecog":null,"karnofsky":null,"medications":null,"procedures":null,"metastasis":[],"age":null}'
+          {
+            resource: {
+              resourceType: 'Patient',
+              id: 'fglscNH3Ke3tYmWe-UQEu',
+              gender: 'female',
+              birthDate: '1968',
+            },
+            fullUrl: 'urn:uuid:fglscNH3Ke3tYmWe-UQEu',
+          },
+          {
+            resource: {
+              resourceType: 'Condition',
+              meta: {
+                profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-primary-cancer-condition'],
+              },
+              subject: {
+                reference: 'urn:uuid:fglscNH3Ke3tYmWe-UQEu',
+                type: 'Patient',
+              },
+              code: {
+                coding: [
+                  {
+                    system: 'http://snomed.info/sct',
+                    code: '408643008',
+                    display: 'Infiltrating duct carcinoma of breast (disorder)',
+                  },
+                ],
+              },
+              category: [
+                {
+                  coding: [
+                    {
+                      system: 'http://snomed.info/sct',
+                      code: '64572001',
+                    },
+                  ],
+                },
+              ],
+            },
+          },
+          {
+            resource: {
+              resourceType: 'MedicationStatement',
+              subject: {
+                reference: 'urn:uuid:fglscNH3Ke3tYmWe-UQEu',
+                type: 'Patient',
+              },
+              status: 'completed',
+              medicationCodeableConcept: {
+                coding: [
+                  {
+                    system: 'http://www.nlm.nih.gov/research/umls/rxnorm',
+                    code: '258494',
+                    display: 'exemestane',
+                  },
+                ],
+              },
+              meta: {
+                profile: ['http://hl7.org/fhir/us/mcode/StructureDefinition/mcode-cancer-related-medication-statement'],
+              },
+              effectiveDateTime: '2023-05-04T19:41:59.078Z',
+            },
+          },
+        ]}).toString()
+    expect(query).toEqual(
+      '{"lat":"42.499332","lng":"-71.281901","distance":null,"biomarkers":[],"stage":null,"cancerName":"breast","cancerType":"breast_cancer","cancerSubType":"invasive_carcinoma","ecog":null,"karnofsky":null,"medications":["exemestane"],"procedures":[],"metastasis":[],"age":null}'
     );
   });
 

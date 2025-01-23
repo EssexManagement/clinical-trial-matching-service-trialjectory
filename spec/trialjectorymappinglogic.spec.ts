@@ -216,5 +216,6 @@ describe('TrialjectoryMappingLogic', () => {
     expect(instance.getSecondaryCancerValues()).toBeNull();
     expect(instance.getECOGScore()).toEqual(0);
     expect(instance.getKarnofskyScore()).toEqual(100);
+    expect(instance.getMedicationStatementValues()).toEqual(["exemestane"]);
   });
 });
