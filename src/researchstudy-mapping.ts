@@ -3,7 +3,7 @@
  * the underlying service to the FHIR ResearchStudy type.
  */
 
-import { ResearchStudy } from 'clinical-trial-matching-service';
+import { ResearchStudy } from '@EssexManagement/clinical-trial-matching-service';
 import * as fhir from 'fhir/r4';
 import { QueryTrial } from './query';
 
