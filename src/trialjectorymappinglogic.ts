@@ -1,4 +1,16 @@
-import { CodeMapper, CodeSystemEnum, Quantity, TumorMarker, CancerGeneticVariant, Ratio, BaseFhirResource, CancerRelatedSurgicalProcedure, CancerRelatedRadiationProcedure, PrimaryCancerCondition, mCODEextractor } from 'clinical-trial-matching-service';
+import {
+  CodeMapper,
+  CodeSystemEnum,
+  Quantity,
+  TumorMarker,
+  CancerGeneticVariant,
+  Ratio,
+  BaseFhirResource,
+  CancerRelatedSurgicalProcedure,
+  CancerRelatedRadiationProcedure,
+  PrimaryCancerCondition,
+  mCODEextractor
+} from '@EssexManagement/clinical-trial-matching-service';
 import * as fhir from 'fhir/r4';
 import profile_system_codes from '../data/profile-system-codes.json';
 //import system_metastasis_codes_json from '../data/system-metastasis-codes-json.json';

@@ -8,7 +8,7 @@ import {
   ClinicalTrialsGovService,
   ServiceConfiguration,
   SearchSet
-} from "clinical-trial-matching-service";
+} from "@EssexManagement/clinical-trial-matching-service";
 import * as fhir from 'fhir/r4';
 import convertToResearchStudy from "./researchstudy-mapping";
 import { TrialjectoryMappingLogic } from "./trialjectorymappinglogic";
