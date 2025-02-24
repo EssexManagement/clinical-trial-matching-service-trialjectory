@@ -20,6 +20,14 @@ export interface QueryConfiguration extends ServiceConfiguration {
   auth_token?: string;
 }
 
+interface TJResponse {
+  success: boolean;
+  data: {
+    ids: string[];
+    trials: object[];
+  }
+}
+
 /**
  * Create a new matching function using the given configuration.
  *
@@ -432,10 +440,16 @@ function sendQuery(
         result.on("end", () => {
           console.log("Complete");
           if (result.statusCode === 200) {
-            let json: unknown;
+            let json: TJResponse;
             try {
-              json = JSON.parse(responseBody) as unknown;
-              console.log("JSON Response: ", json);
+              json = JSON.parse(responseBody);
+              console.log(`Matcher API response: Total = ${json?.data?.ids?.length ?? 0}`)
+              console.log(
+                "Matched trials:",
+                JSON.stringify(json?.data?.ids),
+                JSON.stringify(json?.data?.trials?.[0]),
+                JSON.stringify(json?.data?.trials?.at(-1))
+              );
             } catch (ex) {
               reject(
                 new APIError(
