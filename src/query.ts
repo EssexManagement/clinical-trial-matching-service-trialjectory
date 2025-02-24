@@ -7,7 +7,10 @@ import { IncomingMessage } from "http";
 import {
   ClinicalTrialsGovService,
   ServiceConfiguration,
-  SearchSet
+  SearchSet,
+  devCacheClientConstructor,
+  DevCacheClientAbs,
+  DevCacheClient
 } from "@EssexManagement/clinical-trial-matching-service";
 import * as fhir from 'fhir/r4';
 import convertToResearchStudy from "./researchstudy-mapping";
@@ -18,14 +21,6 @@ import ALLOWABLE_VALUES from '../data/allowable-values.json';
 export interface QueryConfiguration extends ServiceConfiguration {
   endpoint?: string;
   auth_token?: string;
-}
-
-interface TJResponse {
-  success: boolean;
-  data: {
-    ids: string[];
-    trials: object[];
-  }
 }
 
 /**
@@ -48,14 +43,21 @@ export function createClinicalTrialLookup(
     throw new Error("Missing auth_token in configuration");
   }
   const endpoint = configuration.endpoint;
-  const bearerToken = configuration.auth_token;
-  return function getMatchingClinicalTrials(
+  return async function getMatchingClinicalTrials(
     patientBundle: fhir.Bundle
   ): Promise<SearchSet> {
-    // Create the query based on the patient bundle:
     const query = new APIQuery(patientBundle);
+    const devCacheClient = await devCacheClientConstructor();
+    await devCacheClient.connect();
+    // Create the query based on the patient bundle:
     // And send the query to the server - For now, the full patient bundle is the query
-    return sendQuery(endpoint, query, bearerToken, ctgService);
+    let result: QueryResponse;
+    try {
+      result = await sendQuery(endpoint, query, devCacheClient);
+    } finally {
+      await devCacheClient.quit();
+    }
+    return convertResponseToSearchSet(result, ctgService);
   };
 }
 
@@ -137,6 +139,7 @@ export function isQueryTrial(o: unknown): o is QueryTrial {
 export interface QueryResponse extends Record<string, unknown> {
   data: {
     trials: QueryTrial[];
+    ids: string[];
   }
 }
 
@@ -153,7 +156,12 @@ export function isQueryResponse(o: unknown): o is QueryResponse {
   // the assumption is that a single unparsable trial should not cause the
   // entire response to be thrown away.
   const response = o as QueryResponse;
-  return typeof response.data == 'object' && response.data != null && Array.isArray(response.data.trials);
+  return (
+    typeof response.data == "object" &&
+    response.data != null &&
+    Array.isArray(response.data.trials) &&
+    Array.isArray(response.data.ids)
+  );
 }
 
 export interface QueryErrorResponse extends Record<string, unknown> {
@@ -401,97 +409,109 @@ export async function convertResponseToSearchSet(
  *
  * @param endpoint the URL of the end point to send the query to
  * @param query the query to send
- * @param bearerToken the bearer token to send along with the query to
- *     authenticate with the service
- * @param ctgService an optional ClinicalTrialsGovService which can be used to
- *     update the returned trials with additional information pulled from
- *     ClinicalTrials.gov
  */
-function sendQuery(
+async function sendQuery(
   endpoint: string,
   query: APIQuery,
-  bearerToken: string,
-  ctgService?: ClinicalTrialsGovService
-): Promise<SearchSet> {
-  return new Promise((resolve, reject) => {
-    const body = Buffer.from(query.toQuery(), "utf8"); //query.toQuery()
-    console.log("QUERY");
-    console.log(query.toQuery());
+  devCacheClient: DevCacheClientAbs
+): Promise<QueryResponse> {
+  const body = Buffer.from(query.toQuery(), "utf8"); //query.toQuery()
+  console.log("QUERY", query.toQuery());
 
-    if (query.cancerName == null) {
-      reject(new APIError(`Error from service: cancerName is null`,null,""));
+  if (devCacheClient instanceof DevCacheClient) {
+    const key = endpoint + query.toQuery();
+    const cached = await devCacheClient.get(key);
+    if (cached) {
+      return cached as QueryResponse;
     }
+    const res = await httpRequest();
+    await devCacheClient.set(key, res);
+    return res;
+  }
 
-    const request = https.request(
-      endpoint,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json; charset=UTF-8",
-          "Content-Length": body.byteLength.toString(),
-          "User-Agent": "Clinical-Trial-Matching-Wrapper",
-        },
-      },
-      (result) => {
-        let responseBody = "";
-        result.on("data", (chunk) => {
-          responseBody += chunk;
-        });
-        result.on("end", () => {
-          console.log("Complete");
-          if (result.statusCode === 200) {
-            let json: TJResponse;
-            try {
-              json = JSON.parse(responseBody);
-              console.log(`Matcher API response: Total = ${json?.data?.ids?.length ?? 0}`)
-              console.log(
-                "Matched trials:",
-                JSON.stringify(json?.data?.ids),
-                JSON.stringify(json?.data?.trials?.[0]),
-                JSON.stringify(json?.data?.trials?.at(-1))
-              );
-            } catch (ex) {
-              reject(
-                new APIError(
-                  "Unable to parse response as JSON",
-                  500,
-                  responseBody
-                )
-              );
-            }
-            if (isQueryResponse(json)) {
-              resolve(convertResponseToSearchSet(json, ctgService));
-            } else if (isQueryErrorResponse(json)) {
-              reject(
-                new APIError(
-                  `Error from service: ${json.error}`,
-                  500,
-                  responseBody
-                )
-              );
-            } else {
-              reject(new Error("Unable to parse response from server"));
-            }
-          } else {
-            console.error(responseBody)
-            reject(
-              new APIError(
-                `Server returned ${result.statusCode} ${result.statusMessage}`,
-                500,
-                responseBody
-              )
-            );
-          }
-        });
+  function httpRequest(): Promise<QueryResponse> {
+    return new Promise((resolve, reject) => {
+      if (query.cancerName == null) {
+        reject(
+          new APIError(`Error from service: cancerName is null`, null, "")
+        );
       }
-    );
 
-    request.on("error", (error) => {
-      console.error(error)
-      reject(error)
+      const request = https.request(
+        endpoint,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json; charset=UTF-8",
+            "Content-Length": body.byteLength.toString(),
+            "User-Agent": "Clinical-Trial-Matching-Wrapper",
+          },
+        },
+        (result) => {
+          let responseBody = "";
+          result.on("data", (chunk) => {
+            responseBody += chunk;
+          });
+          result.on("end", () => {
+            console.log("Complete");
+            if (result.statusCode === 200) {
+              let json: unknown;
+              try {
+                json = JSON.parse(responseBody);
+              } catch (ex) {
+                reject(
+                  new APIError(
+                    "Unable to parse response as JSON",
+                    500,
+                    responseBody
+                  )
+                );
+              }
+              if (isQueryResponse(json)) {
+                console.log(
+                  `Matcher API response: Total = ${json.data.ids.length}`
+                );
+                console.log(
+                  "Matched trials:",
+                  JSON.stringify(json.data.ids),
+                  JSON.stringify(json.data.trials[0]),
+                  JSON.stringify(json.data.trials.at(-1))
+                );
+                resolve(json);
+              } else if (isQueryErrorResponse(json)) {
+                reject(
+                  new APIError(
+                    `Error from service: ${json.error}`,
+                    500,
+                    responseBody
+                  )
+                );
+              } else {
+                reject(new Error("Unable to parse response from server"));
+              }
+            } else {
+              console.error(responseBody);
+              reject(
+                new APIError(
+                  `Server returned ${result.statusCode} ${result.statusMessage}`,
+                  500,
+                  responseBody
+                )
+              );
+            }
+          });
+        }
+      );
+
+      request.on("error", (error) => {
+        console.error(error);
+        reject(error);
+      });
+
+      request.write(body);
+      request.end();
     });
+  }
 
-    request.write(body);
-    request.end();
-  });
+  return httpRequest();
 }
