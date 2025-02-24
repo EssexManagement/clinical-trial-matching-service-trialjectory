@@ -123,14 +123,14 @@ describe("isQueryResponse()", () => {
   });
 
   it("returns true on a matching object", () => {
-    expect(isQueryResponse({ data: { trials: [] } })).toBeTrue();
+    expect(isQueryResponse({ data: { trials: [], ids: [] } })).toBeTrue();
     expect(
-      isQueryResponse({ data: { trials: [{ name: "Trial" }] } })
+      isQueryResponse({ data: { trials: [{ name: "Trial" }], ids: [] } })
     ).toBeTrue();
     // Currently this is true. It may make sense to make it false, but for now,
     // a single invalid trial does not invalidate the array.
     expect(
-      isQueryResponse({ data: { trials: [{ invalid: true }] } })
+      isQueryResponse({ data: { trials: [{ invalid: true }], ids: [] } })
     ).toBeTrue();
   });
 });
@@ -380,6 +380,7 @@ describe("convertResponseToSearchSet()", () => {
               },
             },
           ],
+          ids: []
         },
       }).then((searchSet) => {
         expect(searchSet.entry.length).toEqual(1);
@@ -393,7 +394,7 @@ describe("convertResponseToSearchSet()", () => {
 
   it("skips invalid trials", () => {
     const response: QueryResponse = {
-      data: { trials: [] },
+      data: { trials: [], ids: [] },
     };
     // Push on an invalid object
     response.data.trials.push({
@@ -474,6 +475,7 @@ describe("convertResponseToSearchSet()", () => {
                 },
               },
             ],
+            ids: ["NCT03371017"]
           },
         },
         backupService
@@ -567,6 +569,8 @@ describe("ClinicalTrialLookup", () => {
     // each test
     scope = nock("https://www.example.com");
     mockRequest = scope.post("/endpoint");
+    process.env.NODE_ENV = "test";
+    // jasmine.DEFAULT_TIMEOUT_INTERVAL = 60000;
   });
   afterEach(() => {
     // Expect the endpoint to have been hit in these tests
@@ -576,7 +580,7 @@ describe("ClinicalTrialLookup", () => {
   });
 
   it("generates a request", () => {
-    mockRequest.reply(200, { data: { trials: [] } });
+    mockRequest.reply(200, { data: { trials: [], ids: [] } });
     return expectAsync(matcher(patientBundle)).toBeResolved();
   });
 
