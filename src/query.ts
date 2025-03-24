@@ -422,6 +422,15 @@ async function sendQuery(
     const key = endpoint + query.toQuery();
     const cached = await devCacheClient.get(key);
     if (cached) {
+      console.log(
+        `Matcher API response: Total = ${cached.data.ids.length}`
+      );
+      console.log(
+        "Matched trials:",
+        JSON.stringify(cached.data.ids),
+        JSON.stringify(cached.data.trials[0]),
+        JSON.stringify(cached.data.trials.at(-1))
+      );
       return cached as QueryResponse;
     }
     const res = await httpRequest();
