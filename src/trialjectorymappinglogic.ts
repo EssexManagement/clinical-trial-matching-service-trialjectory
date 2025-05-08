@@ -288,57 +288,8 @@ export class TrialjectoryMappingLogic {
           "Carcinoma of the rectosigmoid junction (disorder)",
           "Carcinoma of colon (disorder)"
         ];
-        const rectal:string[] = [
-          "Malignant neoplasm of colon (disorder)",
-          "Malignant tumor of sigmoid colon (disorder)",
-          "Malignant tumor of ascending colon (disorder)",
-          "Malignant tumor of transverse colon (disorder)",
-          "Malignant tumor of descending colon (disorder)",
-          "Malignant tumor of rectosigmoid junction (disorder)",
-          "Malignant tumor of hepatic flexure (disorder)",
-          "Malignant tumor of splenic flexure (disorder)",
-          "Hereditary nonpolyposis colon cancer (disorder)",
-          "Overlapping malignant neoplasm of colon (disorder)",
-          "Primary malignant neoplasm of colon (disorder)",
-          "Primary malignant neoplasm of sigmoid colon (disorder)",
-          "Primary malignant neoplasm of ascending colon (disorder)",
-          "Primary malignant neoplasm of descending colon (disorder)",
-          "Primary malignant neoplasm of transverse colon (disorder)",
-          "Primary malignant mesenchymal neoplasm of colon (disorder)",
-          "Primary malignant neuroendocrine neoplasm of colon (disorder)",
-          "Primary malignant neoplasm of hepatic flexure of colon (disorder)",
-          "Primary malignant neoplasm of splenic flexure of colon (disorder)",
-          "Primary malignant neoplasm of overlapping sites of colon (disorder)",
-          "Primary malignant gastrointestinal stromal neoplasm of colon (disorder)",
-          "Primary adenocarcinoma of descending colon (disorder)",
-          "Primary adenocarcinoma of ascending colon (disorder)",
-          "Primary adenocarcinoma of rectosigmoid junction (disorder)",
-          "Overlapping malignant neoplasm of colon and rectum (disorder)",
-          "Primary adenocarcinoma of colon (disorder)",
-          "Familial colorectal cancer type X (disorder)",
-          "Kaposi sarcoma of colon (disorder)",
-          "Leiomyosarcoma of colon (disorder)",
-          "Malignant neoplasm of colon and/or rectum (disorder)",
-          "Squamous cell carcinoma of colon (disorder)",
-          "Microsatellite instability-high colorectal cancer (disorder)",
-          "Malignant carcinoid tumor of colon (disorder)",
-          "Primary adenocarcinoma of descending colon and splenic flexure (disorder)",
-          "Primary neuroendocrine carcinoma of colon (disorder)",
-          "Primary adenocarcinoma of transverse colon (disorder)",
-          "Primary adenocarcinoma of ascending colon and right flexure (disorder)",
-          "Adenocarcinoma of rectosigmoid junction (disorder)",
-          "Local recurrence of malignant tumor of colon (disorder)",
-          "Carcinoma of splenic flexure (disorder)",
-          "Carcinoma of hepatic flexure (disorder)",
-          "Carcinoma of descending colon (disorder)",
-          "Carcinoma of transverse colon (disorder)",
-          "Carcinoma of ascending colon (disorder)",
-          "Adenocarcinoma of sigmoid colon (disorder)",
-          "Metastasis to colon of unknown primary (disorder)",
-          "Carcinoma of sigmoid colon (disorder)",
-          "Carcinoma of the rectosigmoid junction (disorder)",
-          "Carcinoma of colon (disorder)"
-        ];
+        // IDK why colon = rectal. Maybe a copy/paste bug.
+        const rectal:string[] = colon;
         const familial:string[] = [
           "Hereditary nonpolyposis colon cancer (disorder)",
           "Familial colorectal cancer type X (disorder)",
@@ -347,6 +298,7 @@ export class TrialjectoryMappingLogic {
 
         // Colon is one-to-one mapping so just return what subgroup it is in
         if (pccNames.some(pcc => colon.includes(pcc))) return "colon";
+        // Rectal is unreachable when pccName is in colon list
         if (pccNames.some(pcc => rectal.includes(pcc))) return "rectal";
         if (pccNames.some(pcc => familial.includes(pcc))) return "familial";
       }
@@ -741,7 +693,14 @@ export class TrialjectoryMappingLogic {
         "Infiltrating duct and lobular carcinoma (morphologic abnormality)",
       ];
 
-      if (stage == "4" && (pccNames.some(pcc => pcc == "Cancer-Breast") && histologyMorphologies.some(hm => morphologyInvasive.includes(hm) || "Morphology-Invasive") || pccNames.some(pcc => pcc == "Cancer-Invasive-Breast"))) {
+      if (
+        stage == "4" &&
+        ((pccNames.some((pcc) => pcc == "Cancer-Breast") &&
+          histologyMorphologies.some(
+            (hm) => morphologyInvasive.includes(hm) || "Morphology-Invasive"
+          )) ||
+          pccNames.some((pcc) => pcc == "Cancer-Invasive-Breast"))
+      ) {
         return "invasive_breast_cancer_and_metastatic";
       }
 

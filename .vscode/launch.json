@@ -9,7 +9,11 @@
       "port": 9229,
       "request": "attach",
       "skipFiles": ["<node_internals>/**"],
-      "type": "node"
+      "type": "node",
+      "resolveSourceMapLocations": [
+        "${workspaceFolder}/**",
+        "/workspaces/acs-ctms-vol/clinical-trial-matching-service/dist/**/*.js"
+      ]
     }
   ]
 }
