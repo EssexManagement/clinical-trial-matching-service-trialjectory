@@ -494,5 +494,12 @@
   "Lipid-rich urothelial carcinoma of urinary system (disorder)": "bladder",
   "Clear cell urothelial carcinoma of urinary system (disorder)": "bladder",
   "Primary urothelial carcinoma of paraurethral gland (disorder)": "bladder",
-  "Primary urothelial carcinoma of overlapping sites of urinary organs (disorder)": "bladder"
+  "Primary urothelial carcinoma of overlapping sites of urinary organs (disorder)": "bladder",
+  "Malignant neoplasm of uterus (disorder)": "uterus",
+  "Sarcoma of uterus (disorder)": "uterus",
+  "Adenocarcinoma of uterus (disorder)": "uterus",
+  "Carcinosarcoma of uterus (disorder)": "uterus",
+  "Malignant epithelial neoplasm of uterus (disorder)": "uterus",
+  "Malignant neoplasm of body of uterus (disorder)": "uterus",
+  "Carcinoma in situ of uterus (disorder)": "uterus"
 }

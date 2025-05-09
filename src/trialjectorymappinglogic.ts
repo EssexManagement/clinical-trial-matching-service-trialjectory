@@ -620,6 +620,26 @@ export class TrialjectoryMappingLogic {
         if (pccNames.some(pcc => sarcomatoid_carcinoma.includes(pcc))) return "sarcomatoid_carcinoma";
 
       }
+
+      // --------------------------------------------------
+      // UTERUS
+      else if (majorType == "uterus") {
+        console.log("UTERUS");
+
+        const adenocarcinoma = [
+          "Adenocarcinoma of uterus (disorder)",
+        ]
+        const sarcoma = [
+          "Sarcoma of uterus (disorder)"
+        ]
+        const mixed_histo_morph = [
+          "Carcinosarcoma of uterus (disorder)"
+        ]
+
+        if (pccNames.some(pcc => adenocarcinoma.includes(pcc))) return "adenocarcinoma";
+        if (pccNames.some(pcc => sarcoma.includes(pcc))) return "sarcoma";
+        if (pccNames.some(pcc => mixed_histo_morph.includes(pcc))) return "mixed";
+      }
     }
 
     // No proper mapping so return null

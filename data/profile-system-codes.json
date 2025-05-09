@@ -7636,6 +7636,15 @@
   "Carcinosarcoma of uterus (disorder)": {
     "SNOMED": ["702369008"]
   },
+  "Malignant epithelial neoplasm of uterus (disorder)": {
+    "SNOMED": ["446022000"]
+  },
+  "Malignant neoplasm of body of uterus (disorder)": {
+    "SNOMED": ["371972005"]
+  },
+  "Carcinoma in situ of uterus (disorder)": {
+    "SNOMED": ["92788005"]
+  },
   "Squamous cell carcinoma (disorder)": {
     "SNOMED": ["402815007"]
   },

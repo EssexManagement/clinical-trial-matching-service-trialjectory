@@ -544,5 +544,13 @@
       "ebrt",
       "brachytherapy"
     ]
+  },
+  "uterus": {
+    "cancerType": ["adenocarcinoma", "sarcoma", "mixed"],
+    "cancerSubType": [],
+    "biomarkers": [],
+    "stage": [],
+    "medications": [],
+    "procedures": []
   }
 }
