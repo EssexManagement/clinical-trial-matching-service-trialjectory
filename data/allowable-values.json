@@ -544,5 +544,31 @@
       "ebrt",
       "brachytherapy"
     ]
+  },
+  "pancreas": {
+    "cancerType": [
+      "adenocarcinoma"
+    ],
+    "cancerSubType": [
+      "acinar_cell",
+      "acinar_ductal",
+      "acinar_endocrine",
+      "cystadenocarcinoma",
+      "familial",
+      "ductal",
+      "mucinous_cystadenocarcinoma",
+      "mucinous_cystic",
+      "mucinous_cystic_noninvasive",
+      "neuroendocrine",
+      "solid_pseudopapillary",
+      "intraductal_papillary_mucinous",
+      "intraductal_papillary_mucinous_noninvasive",
+      "borderline",
+      "benign"
+    ],
+    "biomarkers": [],
+    "stage": [],
+    "medications": [],
+    "procedures": []
   }
 }

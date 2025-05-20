@@ -11486,6 +11486,99 @@
   "Clear cell urothelial carcinoma of urinary system (disorder)": { "SNOMED": ["1231381006"] },
   "Primary urothelial carcinoma of paraurethral gland (disorder)": { "SNOMED": ["733135005"] },
   "Primary urothelial carcinoma of overlapping sites of urinary organs (disorder)": { "SNOMED": ["724468006"] },
+  "Acinar cell carcinoma of pancreas (disorder)": {
+    "SNOMED": ["783771003"]
+  },
+  "Adenocarcinoma of pancreas (disorder)": {
+    "SNOMED": ["700423003"]
+  },
+  "Carcinoma in situ of pancreas (disorder)": {
+    "SNOMED": ["92672004"]
+  },
+  "Carcinoma of body of pancreas (disorder)": {
+    "SNOMED": ["363368005"]
+  },
+  "Carcinoma of endocrine pancreas (disorder)": {
+    "SNOMED": ["254612002"]
+  },
+  "Carcinoma of head of pancreas (disorder)": {
+    "SNOMED": ["326072005"]
+  },
+  "Carcinoma of pancreas (disorder)": {
+    "SNOMED": ["372142002"]
+  },
+  "Carcinoma of tail of pancreas (disorder)": {
+    "SNOMED": ["363369002"]
+  },
+  "Cystadenocarcinoma of pancreas (disorder)": {
+    "SNOMED": ["235966007"]
+  },
+  "Familial malignant neoplasm of pancreas (disorder)": {
+    "SNOMED": ["715414009"]
+  },
+  "Intraductal tubulopapillary malignant neoplasm of pancreas (disorder)": {
+    "SNOMED": ["1237341006"]
+  },
+  "Local recurrence of malignant neoplasm of pancreas (disorder)": {
+    "SNOMED": ["314964006"]
+  },
+  "Malignant neoplasm of body of pancreas (disorder)": {
+    "SNOMED": ["187791002"]
+  },
+  "Malignant neoplasm of ectopic pancreatic tissue (disorder)": {
+    "SNOMED": ["187798008"]
+  },
+  "Malignant neoplasm of endocrine pancreas (disorder)": {
+    "SNOMED": ["254611009"]
+  },
+  "Malignant neoplasm of exocrine pancreas (disorder)": {
+    "SNOMED": ["255088001"]
+  },
+  "Malignant neoplasm of head of pancreas (disorder)": {
+    "SNOMED": ["363419009"]
+  },
+  "Malignant neoplasm of pancreas (disorder)": {
+    "SNOMED": ["363418001"]
+  },
+  "Malignant neoplasm of pancreatic duct (disorder)": {
+    "SNOMED": ["187793004"]
+  },
+  "Malignant neoplasm of tail of pancreas (disorder)": {
+    "SNOMED": ["187792009"]
+  },
+  "Mucinous cystadenocarcinoma of pancreas (disorder)": {
+    "SNOMED": ["785879009"]
+  },
+  "Mucinous cystic neoplasm with invasive carcinoma of pancreas (disorder)": {
+    "SNOMED": ["866048009"]
+  },
+  "Mucinous cystic neoplasm with low-grade intraepithelial neoplasia of pancreas (disorder)": {
+    "SNOMED": ["1197282005"]
+  },
+  "Neoplasm of pancreas (disorder)": {
+    "SNOMED": ["126859007"]
+  },
+  "Neuroendocrine carcinoma of pancreas (disorder)": {
+    "SNOMED": ["1186869002"]
+  },
+  "Neuroendocrine neoplasm of pancreas (disorder)": {
+    "SNOMED": ["1290080008"]
+  },
+  "Overlapping malignant neoplasm of pancreas (disorder)": {
+    "SNOMED": ["109848009"]
+  },
+  "Pancreatoblastoma (disorder)": {
+    "SNOMED": ["189814006"]
+  },
+  "Primary malignant neoplasm of body of pancreas (disorder)": {
+    "SNOMED": ["93715005"]
+  },
+  "Serous cystadenocarcinoma of pancreas (disorder)": {
+    "SNOMED": ["783706007"]
+  },
+  "Solid pseudopapillary carcinoma of pancreas (disorder)": {
+    "SNOMED": ["782697005"]
+  },
   "Clear cell urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["1231399003"] },
   "Sarcomatoid urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["1208484008"] },
   "Transitional cell carcinoma with glandular differentiation (morphologic abnormality)": { "SNOMED": ["399564007"] },
@@ -11500,6 +11593,24 @@
   "Transitional cell carcinoma, spindle cell (morphologic abnormality)": { "SNOMED": ["112676006"] },
   "Basal cell carcinoma with sarcomatoid differentiation (morphologic abnormality)": { "SNOMED": ["816972004"] },
   "Carcinoma with pleomorphic, sarcomatoid or sarcomatous elements (morphologic abnormality)": { "SNOMED": ["384950003"] },
+  "Acinar cell carcinoma (morphologic abnormality)": {
+    "SNOMED": ["45410002"]
+  },
+  "Mixed acinar-ductal carcinoma (morphologic abnormality)": {
+    "SNOMED": ["450897002"]
+  },
+  "Mixed acinar-endocrine carcinoma (morphologic abnormality)": {
+    "SNOMED": ["396891002"]
+  },
+  "Mixed neuroendocrine-non neuroendocrine neoplasm (morphologic abnormality)": {
+    "SNOMED": ["785766008"]
+  },
+  "Neoplasm of uncertain behavior (morphologic abnormality)": {
+    "SNOMED": ["86251006"]
+  },
+  "Neoplasm, benign (morphologic abnormality)": {
+    "SNOMED": ["3898006"]
+  },
   "intravesical_gemcitabine": {
     "RxNorm": [
       "1244554",

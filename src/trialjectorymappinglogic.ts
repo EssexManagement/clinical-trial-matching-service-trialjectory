@@ -507,7 +507,7 @@ export class TrialjectoryMappingLogic {
           "Squamous cell carcinoma of bladder (disorder)",
         ];
 
-        
+
         const squamous_cell_carcinoma_histo_morph:string[] = [
           "Malignant keratoacanthoma (morphologic abnormality)",
           "Squamous cell carcinoma (morphologic abnormality)",
@@ -619,6 +619,19 @@ export class TrialjectoryMappingLogic {
         if (pccNames.some(pcc => small_cell_carcinoma.includes(pcc))) return "small_cell_carcinoma";
         if (pccNames.some(pcc => sarcomatoid_carcinoma.includes(pcc))) return "sarcomatoid_carcinoma";
 
+      }
+
+      else if (majorType == "pancreas") {
+        console.log("PANCREAS");
+
+        const adenocarcinoma = [
+          "Acinar cell carcinoma of pancreas (disorder)",
+          "Adenocarcinoma of pancreas (disorder)",
+          "Cystadenocarcinoma of pancreas (disorder)",
+          "Mucinous cystadenocarcinoma of pancreas (disorder)",
+          "Serous cystadenocarcinoma of pancreas (disorder)"
+        ]
+        if (pccNames.some(pcc => adenocarcinoma.includes(pcc))) return "adenocarcinoma"
       }
     }
 
@@ -1039,6 +1052,102 @@ export class TrialjectoryMappingLogic {
         if (pccNames.some( pcc => afap.includes(pcc))) return "afap";
         if (pccNames.some( pcc => lynch_syndrome.includes(pcc))) return "lynch_syndrome";
         if (pccNames.some( pcc => hnpcc.includes(pcc))) return "hnpcc";
+      }
+      if (majorType == "pancreas") {
+        const acinar_cell_carcinoma = [
+          "Acinar cell carcinoma of pancreas (disorder)"
+        ]
+        const acinar_ductal = [
+          "Mixed acinar-ductal carcinoma (morphologic abnormality)"
+        ]
+        const acinar_endocrine = [
+          "Mixed acinar-endocrine carcinoma (morphologic abnormality)"
+        ]
+        const cystadenocarcinoma = [
+          "Cystadenocarcinoma of pancreas (disorder)"
+        ]
+        const familial = [
+          "Familial malignant neoplasm of pancreas (disorder)"
+        ]
+        const ductal = [
+          "Intraductal tubulopapillary malignant neoplasm of pancreas (disorder)"
+        ]
+        const mucinous_cystadenocarcinoma = [
+          "Mucinous cystadenocarcinoma of pancreas (disorder)"
+        ]
+        const mucinous_cystic = [
+          "Mucinous cystic neoplasm with invasive carcinoma (morphologic abnormality)",
+          "Mucinous cystic neoplasm with invasive carcinoma of pancreas (disorder)",
+        ]
+        const mucinous_cystic_noninvasive = [
+          "Mucinous cystic neoplasm with low-grade intraepithelial neoplasia of pancreas (disorder)"
+        ]
+        const neuroendocrine = [
+          "Neuroendocrine carcinoma of pancreas (disorder)",
+          "Neuroendocrine neoplasm of pancreas (disorder)",
+          "Large cell neuroendocrine carcinoma (morphologic abnormality)",
+          "Mixed neuroendocrine-non neuroendocrine neoplasm (morphologic abnormality)"
+        ]
+        const serous = [
+          "Serous cystadenocarcinoma of pancreas (disorder)"
+        ]
+        const solid_pseudopapillary = [
+          "Solid pseudopapillary carcinoma of pancreas (disorder)"
+        ]
+        const intraductal_papillary_mucinous = [
+          "Intraductal papillary-mucinous carcinoma, invasive (morphologic abnormality)",
+        ]
+        const intraductal_papillary_mucinous_noninvasive = [
+          "Intraductal papillary-mucinous carcinoma, non-invasive"
+        ]
+        const borderline = [
+          "Neoplasm of uncertain behavior (morphologic abnormality)"
+        ]
+        const benign = [
+          "Neoplasm, benign (morphologic abnormality)"
+        ]
+        if (pccNames.some((pcc) => acinar_cell_carcinoma.includes(pcc)))
+          return "acinar_cell";
+        if (histologyMorphologies.some((hm) => acinar_ductal.includes(hm)))
+          return "acinar_ductal";
+        if (histologyMorphologies.some((hm) => acinar_endocrine.includes(hm)))
+          return "acinar_endocrine";
+        if (pccNames.some((pcc) => cystadenocarcinoma.includes(pcc)))
+          return "cystadenocarcinoma";
+        if (pccNames.some((pcc) => familial.includes(pcc))) return "familial";
+        if (pccNames.some((pcc) => ductal.includes(pcc))) return "ductal";
+        if (pccNames.some((pcc) => mucinous_cystadenocarcinoma.includes(pcc)))
+          return "mucinous_cystadenocarcinoma";
+        if (histologyMorphologies.some((hm) => mucinous_cystic.includes(hm)))
+          return "mucinous_cystic";
+        if (pccNames.some((pcc) => mucinous_cystic.includes(pcc)))
+          return "mucinous_cystic";
+        if (pccNames.some((pcc) => mucinous_cystic_noninvasive.includes(pcc)))
+          return "mucinous_cystic_noninvasive";
+        if (pccNames.some((pcc) => neuroendocrine.includes(pcc)))
+          return "neuroendocrine";
+        if (histologyMorphologies.some((hm) => neuroendocrine.includes(hm)))
+          return "neuroendocrine";
+        if (pccNames.some((pcc) => serous.includes(pcc))) return "serous";
+        if (pccNames.some((pcc) => solid_pseudopapillary.includes(pcc)))
+          return "solid_pseudopapillary";
+        if (
+          histologyMorphologies.some((hm) =>
+            intraductal_papillary_mucinous.includes(hm)
+          )
+        )
+          return "intraductal_papillary_mucinous";
+        if (
+          histologyMorphologies.some((hm) =>
+            intraductal_papillary_mucinous_noninvasive.includes(hm)
+          )
+        )
+          return "intraductal_papillary_mucinous_noninvasive";
+        if (histologyMorphologies.some((hm) => borderline.includes(hm)))
+          return "borderline";
+        if (histologyMorphologies.some((hm) => benign.includes(hm)))
+          return "benign";
+
       }
     }
 
