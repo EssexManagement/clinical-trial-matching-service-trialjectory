@@ -570,5 +570,13 @@
     "stage": [],
     "medications": [],
     "procedures": []
+  },
+  "uterus": {
+    "cancerType": ["adenocarcinoma", "sarcoma", "mixed"],
+    "cancerSubType": [],
+    "biomarkers": [],
+    "stage": [],
+    "medications": [],
+    "procedures": []
   }
 }

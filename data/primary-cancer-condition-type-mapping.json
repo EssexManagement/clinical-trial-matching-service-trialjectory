@@ -525,5 +525,12 @@
   "Pancreatoblastoma (disorder)": "pancreas",
   "Primary malignant neoplasm of body of pancreas (disorder)": "pancreas",
   "Serous cystadenocarcinoma of pancreas (disorder)": "pancreas",
-  "Solid pseudopapillary carcinoma of pancreas (disorder)": "pancreas"
+  "Solid pseudopapillary carcinoma of pancreas (disorder)": "pancreas",
+  "Malignant neoplasm of uterus (disorder)": "uterus",
+  "Sarcoma of uterus (disorder)": "uterus",
+  "Adenocarcinoma of uterus (disorder)": "uterus",
+  "Carcinosarcoma of uterus (disorder)": "uterus",
+  "Malignant epithelial neoplasm of uterus (disorder)": "uterus",
+  "Malignant neoplasm of body of uterus (disorder)": "uterus",
+  "Carcinoma in situ of uterus (disorder)": "uterus"
 }

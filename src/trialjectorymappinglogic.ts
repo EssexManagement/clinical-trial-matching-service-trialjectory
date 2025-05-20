@@ -621,6 +621,8 @@ export class TrialjectoryMappingLogic {
 
       }
 
+      // --------------------------------------------------
+      // PANCREAS
       else if (majorType == "pancreas") {
         console.log("PANCREAS");
 
@@ -632,6 +634,25 @@ export class TrialjectoryMappingLogic {
           "Serous cystadenocarcinoma of pancreas (disorder)"
         ]
         if (pccNames.some(pcc => adenocarcinoma.includes(pcc))) return "adenocarcinoma"
+      }
+      // --------------------------------------------------
+      // UTERUS
+      else if (majorType == "uterus") {
+        console.log("UTERUS");
+
+        const adenocarcinoma = [
+          "Adenocarcinoma of uterus (disorder)",
+        ]
+        const sarcoma = [
+          "Sarcoma of uterus (disorder)"
+        ]
+        const mixed_histo_morph = [
+          "Carcinosarcoma of uterus (disorder)"
+        ]
+
+        if (pccNames.some(pcc => adenocarcinoma.includes(pcc))) return "adenocarcinoma";
+        if (pccNames.some(pcc => sarcoma.includes(pcc))) return "sarcoma";
+        if (pccNames.some(pcc => mixed_histo_morph.includes(pcc))) return "mixed";
       }
     }
 
