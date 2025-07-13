@@ -2077,9 +2077,9 @@ export class TrialjectoryMappingLogic {
     // ('leuprolide', 'leuprolide') // THIS MEDICATION IS NOT CURRENTLY SUPPORTED BY TRIALJECTORY. WE WILL NEED TO DISCUSS THIS WITH THEM.
     // WE HAVE SINCE DISCUSSED THESE MEDICATIONS WITH THEM, WAITING FOR THEM TO PROCEED.
 
-    const medicationValues: string[] = TrialjectoryMappingLogic.codeMapper.extractCodeMappings(this.extractedMcode.cancerRelatedMedicationStatements);
+    let medicationValues: string[] = TrialjectoryMappingLogic.codeMapper.extractCodeMappings(this.extractedMcode.cancerRelatedMedicationStatements);
     // Filter any duplicate values.
-    medicationValues.filter((a, b) => medicationValues.indexOf(a) === b)
+    medicationValues = medicationValues.filter((a, b) => medicationValues.indexOf(a) === b)
     return medicationValues;
   }
 
