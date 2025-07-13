@@ -593,7 +593,7 @@
       "tmb_high",
       "tmb_low"
     ],
-    "stage": [0, 1, 2, 2.1, 2.2, 3, 4],
+    "stage": [0, 1, 1.1, 1.2, 2, 2.1, 2.2, 3, 4],
     "medications": [
       "abraxane",
       "atezolizumab",
@@ -670,25 +670,32 @@
       "tmb_high",
       "tmb_low"
     ],
-    "stage": [1, 2, 2.1, 2.2, 3, 3.1, 3.2, 3.3, 4, 4.1, 4.2, 4.3],
+    "stage": [
+      1, 1.1, 1.2, 1.3, 2, 2.1, 2.2, 2.3, 3, 3.1, 3.2, 3.3, 4, 4.1, 4.2, 4.3
+    ],
     "medications": [
+      "anastrozole",
       "carboplatin",
       "cisplatin",
       "docetaxel",
       "doxorubicin",
       "durvalumab",
       "epirubicin",
+      "everolimus",
+      "exemestane",
       "gemcitabine",
-      "high_dose_estrogen",
       "ifosfamide",
       "jemperli",
       "lenvatinib",
       "letrozole",
       "megace",
+      "olaparib",
       "paclitaxel",
       "pembrolizumab",
       "progesterone",
-      "tamoxifen"
+      "tamoxifen",
+      "temsirolimus",
+      "trastuzumab"
     ],
     "procedures": [
       "ablation",
