@@ -4121,7 +4121,8 @@
       "719499006",
       "702590004",
       "774001008",
-      "709588001"
+      "709588001",
+      "265060005"
     ]
   },
   "rfa-procedure": {
@@ -4141,7 +4142,8 @@
       "38104006",
       "113117004",
       "74023000",
-      "62867004"
+      "62867004",
+      "870385001"
     ]
   },
   "5-Fluorouracil": {
@@ -5830,6 +5832,50 @@
       "2178393",
       "2178400",
       "2178401"
+    ]
+  },
+  "leucovorin": {
+    "RxNorm": [
+      "329898",
+      "1726183",
+      "6313",
+      "1162848",
+      "311282",
+      "1803929",
+      "372575",
+      "997264",
+      "2104714",
+      "1803930",
+      "1803936",
+      "2055035",
+      "997262",
+      "323957",
+      "372573",
+      "997265",
+      "237788",
+      "1803921",
+      "329899",
+      "997267",
+      "329896",
+      "1182470",
+      "1159660",
+      "2055036",
+      "1803932",
+      "978086",
+      "1162850",
+      "360568",
+      "329897",
+      "1803920",
+      "1803937",
+      "105691",
+      "197860",
+      "197861",
+      "1803931",
+      "997261",
+      "1163441",
+      "1726181",
+      "2099993",
+      "225852"
     ]
   },
   "Idecabtagene vicleucel": {
@@ -7644,6 +7690,39 @@
   },
   "Carcinoma in situ of uterus (disorder)": {
     "SNOMED": ["92788005"]
+  },
+  "Endometrioid carcinoma (morphologic abnormality)": {
+    "SNOMED": ["30289006"]
+  },
+  "Clear cell adenocarcinoma (morphologic abnormality)": {
+    "SNOMED": ["30546008"]
+  },
+  "Mixed cell adenocarcinoma (morphologic abnormality)": {
+    "SNOMED": ["38958001"]
+  },
+  "Carcinoma, undifferentiated (morphologic abnormality)": {
+    "SNOMED": ["38549000"]
+  },
+  "Adenosarcoma (morphologic abnormality)": {
+    "SNOMED": ["31470003"]
+  },
+  "Endometrial stromal sarcoma (morphologic abnormality)": {
+    "SNOMED": ["1178986006"]
+  },
+  "Rhabdomyosarcoma (morphologic abnormality)": {
+    "SNOMED": ["30924005"]
+  },
+  "Sarcoma (morphologic abnormality)": {
+    "SNOMED": ["1187396000"]
+  },
+  "Leiomyosarcoma (morphologic abnormality)": {
+    "SNOMED": ["1163022006"]
+  },
+  "Endometrial stromal sarcoma, low grade (morphologic abnormality)": {
+    "SNOMED": ["128726006"]
+  },
+  "Malignant germ cell neoplasm (morphologic abnormality)": {
+    "SNOMED": ["713582000"]
   },
   "Squamous cell carcinoma (disorder)": {
     "SNOMED": ["402815007"]
@@ -11366,6 +11445,9 @@
       "82260-1"
     ]
   },
+  "Biomarker-TMB": {
+    "LOINC": ["94077-5"]
+  },
   "WNT": {
     "HGNC": ["12774"]
   },
@@ -11413,88 +11495,255 @@
       "94224009"
     ]
   },
-  "Malignant neoplasm of augmented bladder (disorder)": { "SNOMED": ["702467006"] },
-  "Carcinoma of urinary bladder, superficial (disorder)": { "SNOMED": ["425231005"] },
-  "Carcinoma of urinary bladder, invasive (disorder)": { "SNOMED": ["425066001"] },
+  "Malignant neoplasm of augmented bladder (disorder)": {
+    "SNOMED": ["702467006"]
+  },
+  "Carcinoma of urinary bladder, superficial (disorder)": {
+    "SNOMED": ["425231005"]
+  },
+  "Carcinoma of urinary bladder, invasive (disorder)": {
+    "SNOMED": ["425066001"]
+  },
   "Malignant tumor of urinary bladder (disorder)": { "SNOMED": ["399326009"] },
-  "Malignant tumor involving bladder by separate metastasis from vagina (disorder)": { "SNOMED": ["369482001"] },
-  "Malignant tumor involving bladder by separate metastasis from uterus (disorder)": { "SNOMED": ["369481008"] },
-  "Malignant tumor involving bladder by separate metastasis from uterine cervix (disorder)": { "SNOMED": ["369480009"] },
-  "Malignant tumor involving bladder by separate metastasis from prostate (disorder)": { "SNOMED": ["369479006"] },
-  "Malignant tumor involving bladder by separate metastasis from ovary (disorder)": { "SNOMED": ["369478003"] },
-  "Malignant tumor involving bladder by separate metastasis from fallopian tube (disorder)": { "SNOMED": ["369477008"] },
-  "Malignant tumor involving bladder by separate metastasis from endometrium (disorder)": { "SNOMED": ["369476004"] },
-  "Malignant tumor involving bladder by direct extension from vagina (disorder)": { "SNOMED": ["369475000"] },
-  "Malignant tumor involving bladder by direct extension from uterus (disorder)": { "SNOMED": ["369474001"] },
-  "Malignant tumor involving bladder by direct extension from uterine cervix (disorder)": { "SNOMED": ["369473007"] },
-  "Malignant tumor involving bladder by direct extension from prostate (disorder)": { "SNOMED": ["369472002"] },
-  "Malignant tumor involving bladder by direct extension from ovary (disorder)": { "SNOMED": ["369471009"] },
-  "Malignant tumor involving bladder by direct extension from fallopian tube (disorder)": { "SNOMED": ["369470005"] },
-  "Malignant tumor involving bladder by direct extension from endometrium (disorder)": { "SNOMED": ["369469009"] },
-  "Metastatic malignant neoplasm to dome of urinary bladder (disorder)": { "SNOMED": ["359785002"] },
-  "Metastatic malignant neoplasm to apex of urinary bladder (disorder)": { "SNOMED": ["359782004"] },
-  "Local recurrence of malignant tumor of urinary bladder (disorder)": { "SNOMED": ["314968009"] },
-  "Metastasis to bladder of unknown primary (disorder)": { "SNOMED": ["285640005"] },
+  "Malignant tumor involving bladder by separate metastasis from vagina (disorder)": {
+    "SNOMED": ["369482001"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from uterus (disorder)": {
+    "SNOMED": ["369481008"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from uterine cervix (disorder)": {
+    "SNOMED": ["369480009"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from prostate (disorder)": {
+    "SNOMED": ["369479006"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from ovary (disorder)": {
+    "SNOMED": ["369478003"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from fallopian tube (disorder)": {
+    "SNOMED": ["369477008"]
+  },
+  "Malignant tumor involving bladder by separate metastasis from endometrium (disorder)": {
+    "SNOMED": ["369476004"]
+  },
+  "Malignant tumor involving bladder by direct extension from vagina (disorder)": {
+    "SNOMED": ["369475000"]
+  },
+  "Malignant tumor involving bladder by direct extension from uterus (disorder)": {
+    "SNOMED": ["369474001"]
+  },
+  "Malignant tumor involving bladder by direct extension from uterine cervix (disorder)": {
+    "SNOMED": ["369473007"]
+  },
+  "Malignant tumor involving bladder by direct extension from prostate (disorder)": {
+    "SNOMED": ["369472002"]
+  },
+  "Malignant tumor involving bladder by direct extension from ovary (disorder)": {
+    "SNOMED": ["369471009"]
+  },
+  "Malignant tumor involving bladder by direct extension from fallopian tube (disorder)": {
+    "SNOMED": ["369470005"]
+  },
+  "Malignant tumor involving bladder by direct extension from endometrium (disorder)": {
+    "SNOMED": ["369469009"]
+  },
+  "Metastatic malignant neoplasm to dome of urinary bladder (disorder)": {
+    "SNOMED": ["359785002"]
+  },
+  "Metastatic malignant neoplasm to apex of urinary bladder (disorder)": {
+    "SNOMED": ["359782004"]
+  },
+  "Local recurrence of malignant tumor of urinary bladder (disorder)": {
+    "SNOMED": ["314968009"]
+  },
+  "Metastasis to bladder of unknown primary (disorder)": {
+    "SNOMED": ["285640005"]
+  },
+  "Secondary malignant neoplasm of pancreas": {
+    "SNOMED": ["94459006"]
+  },
+  "Secondary malignant neoplasm of uterus": {
+    "SNOMED": ["94665001"]
+  },
+  "Secondary malignant neoplasm of soft tissues of abdomen": {
+    "SNOMED": ["94582005"]
+  },
+  "Secondary malignant neoplasm of pelvis": {
+    "SNOMED": ["94480000"]
+  },
+  "Secondary malignant neoplasm of soft tissues of thorax": {
+    "SNOMED": ["94594001"]
+  },
+  "Secondary malignant neoplasm of peritoneum": {
+    "SNOMED": ["94627008"]
+  },
+  "Secondary malignant neoplasm of intestinal tract": {
+    "SNOMED": ["94346004"]
+  },
   "Sarcoma of bladder (disorder)": { "SNOMED": ["278046008"] },
   "Rhabdomyosarcoma of bladder (disorder)": { "SNOMED": ["278024000"] },
   "Squamous cell carcinoma of bladder (disorder)": { "SNOMED": ["255111004"] },
-  "Malignant neoplasm of overlapping sites of bladder (disorder)": { "SNOMED": ["188247000"] },
+  "Malignant neoplasm of overlapping sites of bladder (disorder)": {
+    "SNOMED": ["188247000"]
+  },
   "Malignant tumor of ureteric orifice (disorder)": { "SNOMED": ["188245008"] },
   "Malignant tumor of bladder neck (disorder)": { "SNOMED": ["188244007"] },
-  "Malignant neoplasm of posterior wall of urinary bladder (disorder)": { "SNOMED": ["188243001"] },
-  "Malignant neoplasm of anterior wall of urinary bladder (disorder)": { "SNOMED": ["188242006"] },
-  "Malignant neoplasm of lateral wall of urinary bladder (disorder)": { "SNOMED": ["188241004"] },
+  "Malignant neoplasm of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["188243001"]
+  },
+  "Malignant neoplasm of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["188242006"]
+  },
+  "Malignant neoplasm of lateral wall of urinary bladder (disorder)": {
+    "SNOMED": ["188241004"]
+  },
   "Malignant tumor of vault of bladder (disorder)": { "SNOMED": ["188240003"] },
-  "Malignant tumor of trigone of urinary bladder (disorder)": { "SNOMED": ["188239000"] },
-  "Secondary malignant neoplasm of urinary bladder neck (disorder)": { "SNOMED": ["94662003"] },
-  "Secondary malignant neoplasm of ureteric orifice of urinary bladder (disorder)": { "SNOMED": ["94660006"] },
-  "Secondary malignant neoplasm of trigone of urinary bladder (disorder)": { "SNOMED": ["94647000"] },
-  "Secondary malignant neoplasm of rectovesical septum (disorder)": { "SNOMED": ["94512001"] },
-  "Secondary malignant neoplasm of posterior wall of urinary bladder (disorder)": { "SNOMED": ["94500000"] },
-  "Secondary malignant neoplasm of lateral wall of urinary bladder (disorder)": { "SNOMED": ["94374009"] },
-  "Secondary malignant neoplasm of bladder (disorder)": { "SNOMED": ["94186002"] },
-  "Secondary malignant neoplasm of anterior wall of urinary bladder (disorder)": { "SNOMED": ["94171008"] },
-  "Primary transitional cell carcinoma of ureteral orifice (disorder)": { "SNOMED": ["689851000119102"] },
-  "Primary transitional cell carcinoma of trigone of urinary bladder (disorder)": { "SNOMED": ["689831000119108"] },
-  "Primary transitional cell carcinoma of posterior wall of urinary bladder (disorder)": { "SNOMED": ["689821000119105"] },
-  "Primary transitional cell carcinoma of lateral wall of urinary bladder (disorder)": { "SNOMED": ["689801000119101"] },
-  "Primary transitional cell carcinoma of dome of urinary bladder (disorder)": { "SNOMED": ["689791000119102"] },
-  "Primary transitional cell carcinoma of neck of urinary bladder (disorder)": { "SNOMED": ["689781000119100"] },
-  "Primary transitional cell carcinoma of anterior wall of urinary bladder (disorder)": { "SNOMED": ["689771000119103"] },
-  "Primary squamous cell carcinoma of ureteral orifice (disorder)": { "SNOMED": ["689441000119102"] },
-  "Primary squamous cell carcinoma of posterior wall of urinary bladder (disorder)": { "SNOMED": ["689231000119107"] },
-  "Primary squamous cell carcinoma of lateral wall of urinary bladder (disorder)": { "SNOMED": ["688941000119102"] },
-  "Primary squamous cell carcinoma of dome of urinary bladder (disorder)": { "SNOMED": ["688801000119109"] },
-  "Primary squamous cell carcinoma of neck of urinary bladder (disorder)": { "SNOMED": ["688731000119109"] },
-  "Primary squamous cell carcinoma of anterior wall of urinary bladder (disorder)": { "SNOMED": ["688691000119102"] },
-  "Primary adenocarcinoma of ureteral orifice (disorder)": { "SNOMED": ["682041000119100"] },
-  "Primary adenocarcinoma of trigone of urinary bladder (disorder)": { "SNOMED": ["681991000119104"] },
-  "Primary adenocarcinoma of posterior wall of urinary bladder (disorder)": { "SNOMED": ["681921000119101"] },
-  "Primary adenocarcinoma of dome of urinary bladder (disorder)": { "SNOMED": ["681661000119100"] },
-  "Primary adenocarcinoma of neck of urinary bladder (disorder)": { "SNOMED": ["681611000119103"] },
-  "Primary adenocarcinoma of anterior wall of urinary bladder (disorder)": { "SNOMED": ["681591000119108"] },
-  "Plasmacytoid urothelial carcinoma of urinary bladder (disorder)": { "SNOMED": ["1208461001"] },
-  "Sarcomatoid urothelial carcinoma of urinary bladder (disorder)": { "SNOMED": ["1208460000"] },
-  "Small cell neuroendocrine carcinoma of bladder (disorder)": { "SNOMED": ["718604008"] },
-  "Primary malignant neoplasm of dome of urinary bladder (disorder)": { "SNOMED": ["449803009"] },
-  "Primary malignant neoplasm of apex of urinary bladder (disorder)": { "SNOMED": ["371969003"] },
+  "Malignant tumor of trigone of urinary bladder (disorder)": {
+    "SNOMED": ["188239000"]
+  },
+  "Secondary malignant neoplasm of urinary bladder neck (disorder)": {
+    "SNOMED": ["94662003"]
+  },
+  "Secondary malignant neoplasm of ureteric orifice of urinary bladder (disorder)": {
+    "SNOMED": ["94660006"]
+  },
+  "Secondary malignant neoplasm of trigone of urinary bladder (disorder)": {
+    "SNOMED": ["94647000"]
+  },
+  "Secondary malignant neoplasm of rectovesical septum (disorder)": {
+    "SNOMED": ["94512001"]
+  },
+  "Secondary malignant neoplasm of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["94500000"]
+  },
+  "Secondary malignant neoplasm of lateral wall of urinary bladder (disorder)": {
+    "SNOMED": ["94374009"]
+  },
+  "Secondary malignant neoplasm of bladder (disorder)": {
+    "SNOMED": ["94186002"]
+  },
+  "Secondary malignant neoplasm of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["94171008"]
+  },
+  "Primary transitional cell carcinoma of ureteral orifice (disorder)": {
+    "SNOMED": ["689851000119102"]
+  },
+  "Primary transitional cell carcinoma of trigone of urinary bladder (disorder)": {
+    "SNOMED": ["689831000119108"]
+  },
+  "Primary transitional cell carcinoma of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["689821000119105"]
+  },
+  "Primary transitional cell carcinoma of lateral wall of urinary bladder (disorder)": {
+    "SNOMED": ["689801000119101"]
+  },
+  "Primary transitional cell carcinoma of dome of urinary bladder (disorder)": {
+    "SNOMED": ["689791000119102"]
+  },
+  "Primary transitional cell carcinoma of neck of urinary bladder (disorder)": {
+    "SNOMED": ["689781000119100"]
+  },
+  "Primary transitional cell carcinoma of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["689771000119103"]
+  },
+  "Primary squamous cell carcinoma of ureteral orifice (disorder)": {
+    "SNOMED": ["689441000119102"]
+  },
+  "Primary squamous cell carcinoma of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["689231000119107"]
+  },
+  "Primary squamous cell carcinoma of lateral wall of urinary bladder (disorder)": {
+    "SNOMED": ["688941000119102"]
+  },
+  "Primary squamous cell carcinoma of dome of urinary bladder (disorder)": {
+    "SNOMED": ["688801000119109"]
+  },
+  "Primary squamous cell carcinoma of neck of urinary bladder (disorder)": {
+    "SNOMED": ["688731000119109"]
+  },
+  "Primary squamous cell carcinoma of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["688691000119102"]
+  },
+  "Primary adenocarcinoma of ureteral orifice (disorder)": {
+    "SNOMED": ["682041000119100"]
+  },
+  "Primary adenocarcinoma of trigone of urinary bladder (disorder)": {
+    "SNOMED": ["681991000119104"]
+  },
+  "Primary adenocarcinoma of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["681921000119101"]
+  },
+  "Primary adenocarcinoma of dome of urinary bladder (disorder)": {
+    "SNOMED": ["681661000119100"]
+  },
+  "Primary adenocarcinoma of neck of urinary bladder (disorder)": {
+    "SNOMED": ["681611000119103"]
+  },
+  "Primary adenocarcinoma of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["681591000119108"]
+  },
+  "Plasmacytoid urothelial carcinoma of urinary bladder (disorder)": {
+    "SNOMED": ["1208461001"]
+  },
+  "Sarcomatoid urothelial carcinoma of urinary bladder (disorder)": {
+    "SNOMED": ["1208460000"]
+  },
+  "Small cell neuroendocrine carcinoma of bladder (disorder)": {
+    "SNOMED": ["718604008"]
+  },
+  "Primary malignant neoplasm of dome of urinary bladder (disorder)": {
+    "SNOMED": ["449803009"]
+  },
+  "Primary malignant neoplasm of apex of urinary bladder (disorder)": {
+    "SNOMED": ["371969003"]
+  },
   "Adenocarcinoma of bladder (disorder)": { "SNOMED": ["255110003"] },
-  "Transitional cell carcinoma of bladder (disorder)": { "SNOMED": ["255109008"] },
+  "Transitional cell carcinoma of bladder (disorder)": {
+    "SNOMED": ["255109008"]
+  },
   "Carcinoma of bladder (disorder)": { "SNOMED": ["255108000"] },
-  "Primary malignant neoplasm of urinary bladder neck (disorder)": { "SNOMED": ["94124002"] },
-  "Primary malignant neoplasm of ureteric orifice of urinary bladder (disorder)": { "SNOMED": ["94122003"] },
-  "Primary malignant neoplasm of trigone of urinary bladder (disorder)": { "SNOMED": ["94109006"] },
-  "Primary malignant neoplasm of rectovesical septum (disorder)": { "SNOMED": ["93983000"] },
-  "Primary malignant neoplasm of posterior wall of urinary bladder (disorder)": { "SNOMED": ["93972009"] },
-  "Primary malignant neoplasm of lateral wall of urinary bladder (disorder)": { "SNOMED": ["93863000"] },
-  "Primary malignant neoplasm of bladder (disorder)": { "SNOMED": ["93689003"] },
-  "Primary malignant neoplasm of anterior wall of urinary bladder (disorder)": { "SNOMED": ["93675008"] },
-  "Micropapillary urothelial carcinoma (disorder)": { "SNOMED": ["1208459005"] },
-  "Transitional cell carcinoma of upper urinary tract (disorder)": { "SNOMED": ["1208451008"] },
-  "Lipid-rich urothelial carcinoma of urinary system (disorder)": { "SNOMED": ["1222581000"] },
-  "Clear cell urothelial carcinoma of urinary system (disorder)": { "SNOMED": ["1231381006"] },
-  "Primary urothelial carcinoma of paraurethral gland (disorder)": { "SNOMED": ["733135005"] },
-  "Primary urothelial carcinoma of overlapping sites of urinary organs (disorder)": { "SNOMED": ["724468006"] },
+  "Primary malignant neoplasm of urinary bladder neck (disorder)": {
+    "SNOMED": ["94124002"]
+  },
+  "Primary malignant neoplasm of ureteric orifice of urinary bladder (disorder)": {
+    "SNOMED": ["94122003"]
+  },
+  "Primary malignant neoplasm of trigone of urinary bladder (disorder)": {
+    "SNOMED": ["94109006"]
+  },
+  "Primary malignant neoplasm of rectovesical septum (disorder)": {
+    "SNOMED": ["93983000"]
+  },
+  "Primary malignant neoplasm of posterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["93972009"]
+  },
+  "Primary malignant neoplasm of lateral wall of urinary bladder (disorder)": {
+    "SNOMED": ["93863000"]
+  },
+  "Primary malignant neoplasm of bladder (disorder)": {
+    "SNOMED": ["93689003"]
+  },
+  "Primary malignant neoplasm of anterior wall of urinary bladder (disorder)": {
+    "SNOMED": ["93675008"]
+  },
+  "Micropapillary urothelial carcinoma (disorder)": {
+    "SNOMED": ["1208459005"]
+  },
+  "Transitional cell carcinoma of upper urinary tract (disorder)": {
+    "SNOMED": ["1208451008"]
+  },
+  "Lipid-rich urothelial carcinoma of urinary system (disorder)": {
+    "SNOMED": ["1222581000"]
+  },
+  "Clear cell urothelial carcinoma of urinary system (disorder)": {
+    "SNOMED": ["1231381006"]
+  },
+  "Primary urothelial carcinoma of paraurethral gland (disorder)": {
+    "SNOMED": ["733135005"]
+  },
+  "Primary urothelial carcinoma of overlapping sites of urinary organs (disorder)": {
+    "SNOMED": ["724468006"]
+  },
   "Acinar cell carcinoma of pancreas (disorder)": {
     "SNOMED": ["783771003"]
   },
@@ -11588,20 +11837,213 @@
   "Solid pseudopapillary carcinoma of pancreas (disorder)": {
     "SNOMED": ["782697005"]
   },
-  "Clear cell urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["1231399003"] },
-  "Sarcomatoid urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["1208484008"] },
-  "Transitional cell carcinoma with glandular differentiation (morphologic abnormality)": { "SNOMED": ["399564007"] },
-  "Transitional cell carcinoma with squamous differentiation (morphologic abnormality)": { "SNOMED": ["399464005"] },
-  "Papillary transitional cell carcinoma (morphologic abnormality)": { "SNOMED": ["12400006"] },
-  "Micropapillary urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["128639004"] },
-  "Low-grade non-invasive papillary urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["870763009"] },
-  "High-grade non-invasive papillary urothelial carcinoma (morphologic abnormality)": { "SNOMED": ["1078227006"] },
-  "Transitional carcinoma with mixed papillary and solid growth pattern (morphologic abnormality)": { "SNOMED": ["449330007"] },
-  "Sarcomatoid mesothelioma (morphologic abnormality)": { "SNOMED": ["399477001"] },
-  "Granulosa cell tumor, malignant (morphologic abnormality)": { "SNOMED": ["18861007"] },
-  "Transitional cell carcinoma, spindle cell (morphologic abnormality)": { "SNOMED": ["112676006"] },
-  "Basal cell carcinoma with sarcomatoid differentiation (morphologic abnormality)": { "SNOMED": ["816972004"] },
-  "Carcinoma with pleomorphic, sarcomatoid or sarcomatous elements (morphologic abnormality)": { "SNOMED": ["384950003"] },
+  "Invasive intraductal papillary-mucinous carcinoma of pancreas (disorder)": {
+    "SNOMED": ["780821007"]
+  },
+  "Infiltrating duct carcinoma of pancreas (disorder)": {
+    "SNOMED": ["1148551007"]
+  },
+  "Adenocarcinoma of pancreatic duct (disorder)": {
+    "SNOMED": ["792907004"]
+  },
+  "Mixed ductal-neuroendocrine carcinoma of pancreas (disorder)": {
+    "SNOMED": ["866052009"]
+  },
+  "Primary mixed acinar ductal carcinoma of pancreas (disorder)": {
+    "SNOMED": ["1197286008"]
+  },
+  "Primary mixed acinar endocrine-ductal carcinoma of pancreas (disorder)": {
+    "SNOMED": ["1197283000"]
+  },
+  "Mixed neuroendocrine-non neuroendocrine neoplasm of pancreas (disorder)": {
+    "SNOMED": ["1186735007"]
+  },
+  "Squamous cell carcinoma of exocrine pancreas (disorder)": {
+    "SNOMED": ["770602005"]
+  },
+  "Undifferentiated carcinoma with osteoclast-like giant cells of pancreas (disorder)": {
+    "SNOMED": ["1279841001"]
+  },
+  "Adenocarcinoma of endometrium (disorder)": {
+    "SNOMED": ["123845008"]
+  },
+  "Adenosarcoma of corpus uteri (disorder)": {
+    "SNOMED": ["765740002"]
+  },
+  "Carcinofibroma of corpus uteri (disorder)": {
+    "SNOMED": ["778066006"]
+  },
+  "Carcinosarcoma of corpus uteri (disorder)": {
+    "SNOMED": ["764952009"]
+  },
+  "Carcinosarcoma of endometrium (disorder)": {
+    "SNOMED": ["732201008"]
+  },
+  "Endometrial carcinoma (disorder)": {
+    "SNOMED": ["254878006"]
+  },
+  "Endometrioid carcinoma of endometrium (disorder)": {
+    "SNOMED": ["1260086007"]
+  },
+  "High grade endometrial stromal sarcoma (disorder)": {
+    "SNOMED": ["699358009"]
+  },
+  "High-grade neuroendocrine carcinoma of corpus uteri (disorder)": {
+    "SNOMED": ["773774000"]
+  },
+  "Leiomyosarcoma of corpus uteri (disorder)": {
+    "SNOMED": ["770559003"]
+  },
+  "Low grade endometrial stromal sarcoma (disorder)": {
+    "SNOMED": ["699357004"]
+  },
+  "Malignant epithelial neoplasm of body of uterus (disorder)": {
+    "SNOMED": ["449073009"]
+  },
+  "Malignant epithelial neoplasm of fundus of uterus (disorder)": {
+    "SNOMED": ["449054005"]
+  },
+  "Malignant germ cell neoplasm of corpus uteri (disorder)": {
+    "SNOMED": ["773284000"]
+  },
+  "Malignant neoplasm of cornu of corpus uteri (disorder)": {
+    "SNOMED": ["188190005"]
+  },
+  "Malignant neoplasm of corpus uteri, excluding isthmus (disorder)": {
+    "SNOMED": ["188189001"]
+  },
+  "Malignant neoplasm of endometrium of corpus uteri (disorder)": {
+    "SNOMED": ["188192002"]
+  },
+  "Malignant neoplasm of fundus of corpus uteri (disorder)": {
+    "SNOMED": ["188191009"]
+  },
+  "Malignant neoplasm of isthmus of uterine body (disorder)": {
+    "SNOMED": ["188195000"]
+  },
+  "Malignant neoplasm of myometrium of corpus uteri (disorder)": {
+    "SNOMED": ["188193007"]
+  },
+  "Overlapping malignant neoplasm of body of uterus (disorder)": {
+    "SNOMED": ["109879008"]
+  },
+  "Peripheral neuroectodermal neoplasm of corpus uteri (disorder)": {
+    "SNOMED": ["1156804004"]
+  },
+  "Primary adenosquamous carcinoma of endometrium (disorder)": {
+    "SNOMED": ["107791000119107"]
+  },
+  "Primary malignant clear cell neoplasm of endometrium (disorder)": {
+    "SNOMED": ["107771000119106"]
+  },
+  "Primary malignant stromal sarcoma of endometrium (disorder)": {
+    "SNOMED": ["1260116000"]
+  },
+  "Primary mixed adenocarcinoma of endometrium (disorder)": {
+    "SNOMED": ["722681008"]
+  },
+  "Primary mucinous adenocarcinoma of endometrium (disorder)": {
+    "SNOMED": ["722679006"]
+  },
+  "Primary papillary carcinoma of body of uterus (disorder)": {
+    "SNOMED": ["1197266009"]
+  },
+  "Primary poorly differentiated endocrine carcinoma of body of uterus (disorder)": {
+    "SNOMED": ["1197260003"]
+  },
+  "Primary rhabdomyosarcoma of fundus uteri (disorder)": {
+    "SNOMED": ["1162286009"]
+  },
+  "Primary rhabdomyosarcoma of isthmus of uterine body (disorder)": {
+    "SNOMED": ["1162280003"]
+  },
+  "Primary serous adenocarcinoma of endometrium (disorder)": {
+    "SNOMED": ["722680009"]
+  },
+  "Primary small cell carcinoma of endometrium (disorder)": {
+    "SNOMED": ["722682001"]
+  },
+  "Primary squamous cell carcinoma of endometrium (disorder)": {
+    "SNOMED": ["733359005"]
+  },
+  "Primitive neuroectodermal tumor of corpus uteri (disorder)": {
+    "SNOMED": ["766247009"]
+  },
+  "Rhabdomyosarcoma of corpus uteri (disorder)": {
+    "SNOMED": ["763409006"]
+  },
+  "Rhabdomyosarcoma of endometrium of corpus uteri (disorder)": {
+    "SNOMED": ["1255385002"]
+  },
+  "Rhabdomyosarcoma of myometrium of corpus uteri (disorder)": {
+    "SNOMED": ["1255628005"]
+  },
+  "Sarcoma of body of uterus (disorder)": {
+    "SNOMED": ["1162311007"]
+  },
+  "Sarcoma of endometrium (disorder)": {
+    "SNOMED": ["447266004"]
+  },
+  "Serous carcinoma of body of uterus (disorder)": {
+    "SNOMED": ["1230318000"]
+  },
+  "Squamous cell carcinoma of corpus uteri (disorder)": {
+    "SNOMED": ["764737005"]
+  },
+  "Transitional cell carcinoma of corpus uteri (disorder)": {
+    "SNOMED": ["785807007"]
+  },
+  "Undifferentiated carcinoma of corpus uteri (disorder)": {
+    "SNOMED": ["766758001"]
+  },
+  "Undifferentiated carcinoma of endometrium (disorder)": {
+    "SNOMED": ["1255394008"]
+  },
+  "Well-differentiated neuroendocrine tumor of corpus uteri (disorder)": {
+    "SNOMED": ["1288024001"]
+  },
+  "Clear cell urothelial carcinoma (morphologic abnormality)": {
+    "SNOMED": ["1231399003"]
+  },
+  "Sarcomatoid urothelial carcinoma (morphologic abnormality)": {
+    "SNOMED": ["1208484008"]
+  },
+  "Transitional cell carcinoma with glandular differentiation (morphologic abnormality)": {
+    "SNOMED": ["399564007"]
+  },
+  "Transitional cell carcinoma with squamous differentiation (morphologic abnormality)": {
+    "SNOMED": ["399464005"]
+  },
+  "Papillary transitional cell carcinoma (morphologic abnormality)": {
+    "SNOMED": ["12400006"]
+  },
+  "Micropapillary urothelial carcinoma (morphologic abnormality)": {
+    "SNOMED": ["128639004"]
+  },
+  "Low-grade non-invasive papillary urothelial carcinoma (morphologic abnormality)": {
+    "SNOMED": ["870763009"]
+  },
+  "High-grade non-invasive papillary urothelial carcinoma (morphologic abnormality)": {
+    "SNOMED": ["1078227006"]
+  },
+  "Transitional carcinoma with mixed papillary and solid growth pattern (morphologic abnormality)": {
+    "SNOMED": ["449330007"]
+  },
+  "Sarcomatoid mesothelioma (morphologic abnormality)": {
+    "SNOMED": ["399477001"]
+  },
+  "Granulosa cell tumor, malignant (morphologic abnormality)": {
+    "SNOMED": ["18861007"]
+  },
+  "Transitional cell carcinoma, spindle cell (morphologic abnormality)": {
+    "SNOMED": ["112676006"]
+  },
+  "Basal cell carcinoma with sarcomatoid differentiation (morphologic abnormality)": {
+    "SNOMED": ["816972004"]
+  },
+  "Carcinoma with pleomorphic, sarcomatoid or sarcomatous elements (morphologic abnormality)": {
+    "SNOMED": ["384950003"]
+  },
   "Acinar cell carcinoma (morphologic abnormality)": {
     "SNOMED": ["45410002"]
   },
@@ -11784,13 +12226,7 @@
     ]
   },
   "aclarubicin": {
-    "RxNorm": [
-      "239",
-      "105578",
-      "346447",
-      "378110",
-      "1153164"
-    ]
+    "RxNorm": ["239", "105578", "346447", "378110", "1153164"]
   },
   "isoflamide": {
     "RxNorm": [
@@ -11818,12 +12254,7 @@
     ]
   },
   "Turbt-surgery": {
-    "SNOMED": [
-      "1197529002",
-      "386792000",
-      "287717003",
-      "274037007"
-    ]
+    "SNOMED": ["1197529002", "386792000", "287717003", "274037007"]
   },
   "Partial_cystectomy-surgery": {
     "SNOMED": [
@@ -11861,13 +12292,43 @@
       "64063003"
     ]
   },
-  "Pelvic_irradiation-radiation": {
-    "SNOMED": [
-      "432037000",
-      "431206007",
-      "168609005",
-      "88914000",
-      "18529002"
-    ]
+  "Pancreatectomy-surgery": {
+    "SNOMED": ["33149006", "401004"]
+  },
+  "Pancreaticoduodenectomy-surgery": {
+    "SNOMED": ["116241004"]
+  },
+  "Hysterectomy-surgery": {
+    "SNOMED": ["236886002"]
+  },
+  "Oophorectomy-surgery": {
+    "SNOMED": ["29827000"]
+  },
+  "Lymphadenctomy": {
+    "SNOMED": ["443497002", "14059008", "89542003", "58347006"]
+  },
+  "Omentectomy-surgery": {
+    "SNOMED": ["78384007"]
+  },
+  "Debulking-surgery": {
+    "SNOMED": ["1303774005"]
+  },
+  "Staging-surgery": {
+    "SNOMED": ["45681003"]
+  },
+  "Bowel-surgery": {
+    "SNOMED": ["107938000", "107944001"]
+  },
+  "Ileostomy-surgery": {
+    "SNOMED": ["173977007"]
+  },
+  "Urostomy-surgery": {
+    "SNOMED": ["442190001"]
+  },
+  "Hepatectomy-surgery": {
+    "SNOMED": ["107963000"]
+  },
+  "SRT-radiation": {
+    "SNOMED": ["395096001"]
   }
 }
