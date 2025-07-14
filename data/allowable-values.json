@@ -699,13 +699,19 @@
     ],
     "procedures": [
       "ablation",
+      "bowel_resection",
       "brachytherapy",
+      "colostomy",
       "debulking_surgery",
       "ebrt",
+      "hepatectomy",
       "hysterectomy",
+      "ileostomy",
       "lymphadenectomy",
       "omentectomy",
-      "oophorectomy"
+      "oophorectomy",
+      "staging_surgery",
+      "urostomy"
     ]
   }
 }
