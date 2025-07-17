@@ -626,14 +626,10 @@ export class TrialjectoryMappingLogic {
       else if (majorType == "pancreas") {
         console.log("PANCREAS");
 
-        const adenocarcinoma = [
+        const acinar_cell = [
           "Acinar cell carcinoma of pancreas (disorder)",
-          "Adenocarcinoma of pancreas (disorder)",
-          "Cystadenocarcinoma of pancreas (disorder)",
-          "Mucinous cystadenocarcinoma of pancreas (disorder)",
-          "Serous cystadenocarcinoma of pancreas (disorder)"
         ]
-        if (pccNames.some(pcc => adenocarcinoma.includes(pcc))) return "adenocarcinoma"
+        if (pccNames.some(pcc => acinar_cell.includes(pcc))) return "acinar_cell"
       }
       // --------------------------------------------------
       // UTERUS
