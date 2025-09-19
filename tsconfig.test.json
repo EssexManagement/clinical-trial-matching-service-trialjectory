@@ -2,10 +2,8 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "outDir": "dist-spec",
-    "sourceMap": true
+    "sourceMap": true,
+    "allowJs": true
   },
-  "include": [
-    "./spec/**/*",
-    "./src/**/*"
-  ]
+  "include": ["./spec/**/*", "./src/**/*"]
 }
